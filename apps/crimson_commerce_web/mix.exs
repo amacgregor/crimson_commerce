@@ -45,7 +45,8 @@ defmodule CrimsonCommerceWeb.MixProject do
       {:gettext, "~> 0.11"},
       {:crimson_commerce, in_umbrella: true},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:sobelow, "~> 0.8", only: :dev}
     ]
   end
 
