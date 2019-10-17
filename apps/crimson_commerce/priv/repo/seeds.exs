@@ -9,3 +9,17 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Faker.{Commerce, Lorem}
+alias CrimsonCommerce.Catalog
+
+## Generate the list of SKUs
+skus = Faker.Util.sample_uniq(1000, fn -> Faker.String.base64(8) end)
+
+Enum.each(skus, fn sku ->
+  Catalog.create_product(%{
+    sku: sku,
+    name: Commerce.product_name(),
+    description: Lorem.sentence(10..20),
+    status: true
+  })
+end)
