@@ -13,8 +13,6 @@
 [![MIT License][license-shield]][license-url]
 <!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -121,9 +119,6 @@ cd apps/crimson_commerce_web/assets && npm install
 mix phx.server
 ```
 
-
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -132,12 +127,10 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 
-
 <!-- ROADMAP -->
 ## Roadmap
 
 See the [open issues](https://github.com/amacgregor/crimson_commerce/issues) for a list of proposed features (and known issues).
-
 
 
 <!-- CONTRIBUTING -->
@@ -152,13 +145,10 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -168,15 +158,12 @@ Allan MacGregor - [@allanmacgregor](https://twitter.com/allanmacgregor) - info@a
 Project Link: [https://github.com/amacgregor/crimson_commerce](https://github.com/amacgregor/crimson_commerce)
 
 
-
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
 * []()
 * []()
 * []()
-
-
 
 
 
