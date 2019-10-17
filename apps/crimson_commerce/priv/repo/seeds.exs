@@ -23,3 +23,12 @@ Enum.each(skus, fn sku ->
     status: true
   })
 end)
+
+## Generate a category test data
+Enum.each(1..100, fn x ->
+  Catalog.create_category(%{
+    name: Faker.Commerce.En.department(),
+    description: Lorem.sentence(10..20),
+    status: true
+  })
+end)
