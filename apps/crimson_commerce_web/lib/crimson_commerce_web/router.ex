@@ -17,7 +17,7 @@ defmodule CrimsonCommerceWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/category", CategoryController, :index
+    get "/category/:id", CategoryController, :show
   end
 
   # Other scopes may use custom stacks.

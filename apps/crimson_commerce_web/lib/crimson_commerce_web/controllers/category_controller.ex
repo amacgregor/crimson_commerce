@@ -1,7 +1,14 @@
 defmodule CrimsonCommerceWeb.CategoryController do
   use CrimsonCommerceWeb, :controller
 
-  def index(conn, _params) do
-    render(conn, "index.html")
+  alias CrimsonCommerce.Catalog
+
+  def show(conn, params) do
+    category =
+      params["id"]
+      |> String.to_integer()
+      |> Catalog.get_category!()
+
+    render(conn, "show.html", category: category)
   end
 end
