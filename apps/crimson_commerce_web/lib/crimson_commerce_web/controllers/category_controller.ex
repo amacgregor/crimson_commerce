@@ -9,6 +9,9 @@ defmodule CrimsonCommerceWeb.CategoryController do
       |> String.to_integer()
       |> Catalog.get_category!()
 
-    render(conn, "show.html", category: category)
+    products = Catalog.list_products()
+      |> Enum.chunk_every(4)
+
+    render(conn, "show.html", category: category, products: products)
   end
 end
