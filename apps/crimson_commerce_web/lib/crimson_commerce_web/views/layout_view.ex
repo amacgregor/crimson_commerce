@@ -3,7 +3,6 @@ defmodule CrimsonCommerceWeb.LayoutView do
 
   alias CrimsonCommerce.Catalog
 
-
   def category_list do
     Catalog.list_categories()
   end

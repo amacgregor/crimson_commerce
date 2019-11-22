@@ -7,7 +7,10 @@ defmodule CrimsonCommerce.Catalog.Product do
     field :name, :string
     field :sku, :string
     field :status, :boolean, default: false
-    many_to_many :categories, CrimsonCommerce.Catalog.Category, join_through: "products_categories"
+
+    many_to_many :categories, CrimsonCommerce.Catalog.Category,
+      join_through: "products_categories"
+
     timestamps()
   end
 

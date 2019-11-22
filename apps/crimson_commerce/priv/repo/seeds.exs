@@ -12,7 +12,6 @@
 alias Faker.{Commerce, Lorem}
 alias CrimsonCommerce.{Catalog, Repo}
 
-
 defmodule Seed do
   def create_products_for_category(category) do
     category_changeset =
@@ -38,9 +37,8 @@ defmodule Seed do
   end
 end
 
-
 ## Generate a category test data
-Enum.each(1..10, fn x ->
+Enum.each(1..5, fn x ->
   {:ok, category} =
     Catalog.create_category(%{
       name: Faker.Commerce.En.department(),
