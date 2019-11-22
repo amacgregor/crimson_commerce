@@ -1,0 +1,15 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <p><%= @category.name %></p>
+</section>
+
+<%= for row <- @products do %>
+<div class="flex mb-4">
+    <%= for product <- row do %>
+        <div class="w-1/4 bg-gray-500">
+            <img src="https://via.placeholder.com/300" />
+            <p><%= product.name %></p>
+        </div>
+    <% end %>
+</div>
+<% end %>

@@ -10,25 +10,43 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 alias Faker.{Commerce, Lorem}
-alias CrimsonCommerce.Catalog
+alias CrimsonCommerce.{Catalog, Repo}
 
-## Generate the list of SKUs
-skus = Faker.Util.sample_uniq(1000, fn -> Faker.String.base64(8) end)
 
-Enum.each(skus, fn sku ->
-  Catalog.create_product(%{
-    sku: sku,
-    name: Commerce.product_name(),
-    description: Lorem.sentence(10..20),
-    status: true
-  })
-end)
+defmodule Seed do
+  def create_products_for_category(category) do
+    category_changeset =
+      Repo.preload(category, [:products])
+      |> Ecto.Changeset.change()
+
+    ## Generate the list of SKUs
+    skus = Faker.Util.sample_uniq(10, fn -> Faker.String.base64(8) end)
+
+    Enum.each(skus, fn sku ->
+      {:ok, product} =
+        Catalog.create_product(%{
+          sku: sku,
+          name: Commerce.product_name(),
+          description: Lorem.sentence(10..20),
+          status: true
+        })
+
+      category_changeset
+      |> Ecto.Changeset.put_assoc(:products, [product])
+      |> Repo.update!()
+    end)
+  end
+end
+
 
 ## Generate a category test data
-Enum.each(1..100, fn x ->
-  Catalog.create_category(%{
-    name: Faker.Commerce.En.department(),
-    description: Lorem.sentence(10..20),
-    status: true
-  })
+Enum.each(1..10, fn x ->
+  {:ok, category} =
+    Catalog.create_category(%{
+      name: Faker.Commerce.En.department(),
+      description: Lorem.sentence(10..20),
+      status: true
+    })
+
+  Seed.create_products_for_category(category)
 end)
