@@ -133,6 +133,23 @@ defmodule CrimsonCommerce.Catalog do
   """
   def get_category!(id) do
     Repo.get!(Category, id)
+  end
+
+  @doc """
+  Gets a single category with the preloaded products
+
+  Raise `Ecto.NoResultsError` if the Category does not exists
+
+  ## Examples
+
+    iex> get_category_with_products!(123)
+    %Category{}
+
+    iex> get_category_with_products!(456)
+    ** (Ecto.NoResultsError)
+  """
+  def get_category_with_products!(id) do
+    Repo.get!(Category, id)
     |> Repo.preload([:products])
   end
 
