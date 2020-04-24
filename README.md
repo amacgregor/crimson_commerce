@@ -17,7 +17,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/amacgregor/crimson_commerce">
-    <img src="provisional_logo.png" alt="Logo" width="80" height="80">
+    <img src="doc_logo.png" alt="Logo" height="120">
   </a>
 
   <h3 align="center">Crimson Commerce</h3>
@@ -75,6 +75,7 @@ CrimsonCommerce is an experimental ecommerce platform build using a functional p
 * Highly scalable ecommerce platform
 * Provide tools and frameworks to reduce development complexity – both incidental and accidental
 * Build an ecommerce framework that developers are happy to use
+* Traceability, the ability to know what happened at any point in time to made decisions or solve problems.
  
 
 <!-- GETTING STARTED -->
