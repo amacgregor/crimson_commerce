@@ -19,7 +19,7 @@ defmodule Seed do
       |> Ecto.Changeset.change()
 
     ## Generate the list of SKUs
-    skus = Faker.Util.sample_uniq(10, fn -> Faker.String.base64(8) end)
+    skus = Faker.Util.sample_uniq(48, fn -> Faker.String.base64(8) end)
 
     Enum.each(skus, fn sku ->
       {:ok, product} =
@@ -38,7 +38,7 @@ defmodule Seed do
 end
 
 ## Generate a category test data
-Enum.each(1..5, fn x ->
+Enum.each(1..10, fn x ->
   {:ok, category} =
     Catalog.create_category(%{
       name: Faker.Commerce.En.department(),
