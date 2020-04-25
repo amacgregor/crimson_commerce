@@ -38,6 +38,10 @@ defmodule CrimsonCommerce.MixProject do
     [
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
+      {:commanded, "~> 1.0"},
+      {:jason, "~> 1.1"},
+      {:eventstore, "~> 1.0", runtime: Mix.env() != :test},
+      {:commanded_eventstore_adapter, "~> 1.0.0", runtime: Mix.env() != :test},
       {:faker, "~> 0.13", only: [:test, :dev]}
     ]
   end

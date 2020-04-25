@@ -7,7 +7,8 @@ defmodule CrimsonCommerce.Application do
 
   def start(_type, _args) do
     children = [
-      CrimsonCommerce.Repo
+      CrimsonCommerce.Repo,
+      CrimsonCommerce.EventStore
     ]
 
     Supervisor.start_link(children, strategy: :one_for_one, name: CrimsonCommerce.Supervisor)

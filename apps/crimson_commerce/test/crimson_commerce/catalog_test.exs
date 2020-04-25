@@ -1,5 +1,6 @@
 defmodule CrimsonCommerce.CatalogTest do
   use CrimsonCommerce.DataCase
+  use CrimsonCommerce.Test.InMemoryEventStoreCase
 
   alias CrimsonCommerce.Catalog
 

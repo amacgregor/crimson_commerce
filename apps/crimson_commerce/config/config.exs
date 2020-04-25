@@ -7,4 +7,7 @@ use Mix.Config
 config :crimson_commerce,
   ecto_repos: [CrimsonCommerce.Repo]
 
+config :commanded,
+  event_store_adapter: Commanded.EventStore.Adapters.EventStore
+
 import_config "#{Mix.env()}.exs"
