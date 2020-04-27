@@ -16,3 +16,16 @@ config :commanded, event_store_adapter: Commanded.EventStore.Adapters.InMemory
 
 config :commanded, Commanded.EventStore.Adapters.InMemory,
   serializer: Commanded.Serialization.JsonSerializer
+
+config :crimson_commerce, event_stores: [CrimsonCommerce.EventStore]
+
+config :crimson_commerce, CrimsonCommerce.EventStore,
+  column_data_type: "jsonb",
+  serializer: EventStore.JsonbSerializer,
+  types: EventStore.PostgresTypes,
+  username: "postgres",
+  password: "postgres",
+  database: "crimson_commerce_eventstore_test",
+  hostname: "localhost",
+  pool_size: 10,
+  pool_overflow: 5
