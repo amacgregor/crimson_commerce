@@ -5,7 +5,7 @@ config :crimson_commerce, CrimsonCommerce.Repo,
   username: "postgres",
   password: "postgres",
   database: "crimson_commerce_dev",
-  port: 5433,
+  port: System.get_env("POSTGRES_PORT"),
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
