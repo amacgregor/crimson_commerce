@@ -31,8 +31,9 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 crimson_commerce-*.tar
 
-If NPM crashes, it generates a log, let's ignore it too.
-npm-debug.log
+# Ignore idea files
+.idea/
+*.iml
 
 # The directory NPM downloads your dependencies sources to.
 /assets/node_modules/
