@@ -1,3 +1,0 @@
-# CrimsonCommerce
-
-**TODO: Add description**
