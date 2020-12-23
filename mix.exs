@@ -10,7 +10,14 @@ defmodule CrimsonCommerce.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -46,7 +53,12 @@ defmodule CrimsonCommerce.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:excoveralls, "~> 0.12", only: :test},
+      {:ex_machina, "~> 2.4", only: :test},
+      {:sobelow, "~> 0.8", only: :dev},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -61,7 +73,8 @@ defmodule CrimsonCommerce.MixProject do
       setup: ["deps.get", "ecto.setup", "cmd npm install --prefix assets"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"]
     ]
   end
 end

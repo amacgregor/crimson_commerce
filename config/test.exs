@@ -9,6 +9,7 @@ config :crimson_commerce, CrimsonCommerce.Repo,
   username: "postgres",
   password: "postgres",
   database: "crimson_commerce_test#{System.get_env("MIX_TEST_PARTITION")}",
+  port: 5433,
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 

@@ -11,6 +11,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![Coverage Status][coveralls-url]
 <!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 <!-- PROJECT LOGO -->
@@ -183,3 +184,4 @@ Project Link: [https://github.com/amacgregor/crimson_commerce](https://github.co
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
+[coveralls-url]: https://coveralls.io/repos/github/Bloccs/crimson_commerce/badge.svg

@@ -1,0 +1,68 @@
+name: Elixir CI
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:11
+        ports: ['5432:5432']
+        env:
+          POSTGRES_PASSWORD: postgres
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      stripe-mock:
+        image: stripemock/stripe-mock:latest
+        ports:
+          - 12111:12111
+          - 12112:12112
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Elixir
+      uses: actions/setup-elixir@v1
+      with:
+        elixir-version: '1.11.0' # Define the elixir version [required]
+        otp-version: '23.0.3' # Define the OTP version [required]
+    - name: Restore dependencies cache
+      uses: actions/cache@v2
+      with:
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-mix-
+    - name: Install dependencies
+      run: mix deps.get
+    - name: Run tests
+      run: mix test
+      env:
+        POSTGRES_PORT: 5432
+    - name: Check Code
+      run: mix check
+      env:
+        POSTGRES_PORT: 5432
+    - name: Check Code Coverage
+      run: mix coveralls.github
+      env:
+        POSTGRES_PORT: 5432
+        MIX_ENV: test
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN}}
+    - name: Notify Discord about Status
+      uses: sarisia/actions-status-discord@v1
+      if: always()
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      with:
+        status: ${{ job.status }}

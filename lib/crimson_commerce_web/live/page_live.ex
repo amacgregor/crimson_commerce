@@ -1,4 +1,5 @@
 defmodule CrimsonCommerceWeb.PageLive do
+  @moduledoc false
   use CrimsonCommerceWeb, :live_view
 
   @impl true
