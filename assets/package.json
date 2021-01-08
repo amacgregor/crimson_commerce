@@ -23,7 +23,7 @@
     "babel-loader": "^8.x",
     "copy-webpack-plugin": "^6.x",
     "css-loader": "^5.x",
-    "postcss": "^8.2.1",
+    "postcss": "^8.2.3",
     "postcss-loader": "^4.1.0",
     "css-minimizer-webpack-plugin": "^1.x",
     "mini-css-extract-plugin": "^1.x",
