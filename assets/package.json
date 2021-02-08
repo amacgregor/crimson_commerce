@@ -28,7 +28,7 @@
     "css-minimizer-webpack-plugin": "^1.x",
     "mini-css-extract-plugin": "^1.x",
     "sass": "^1.x",
-    "sass-loader": "^10.x",
+    "sass-loader": "^11.x",
     "webpack": "^5.x",
     "webpack-cli": "^4.x",
     "tailwindcss": "^2.0.2"
