@@ -12,6 +12,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![Coverage][coveralls-badge]][coveralls-link]
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Famacgregor%2Fcrimson_commerce.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Famacgregor%2Fcrimson_commerce?ref=badge_shield)
 <!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 <!-- PROJECT LOGO -->
@@ -153,6 +154,9 @@ Contributions are what make the open source community such an amazing place to b
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Famacgregor%2Fcrimson_commerce.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Famacgregor%2Fcrimson_commerce?ref=badge_large)
+
 ## Contact
 
 Allan MacGregor - [@allanmacgregor](https://twitter.com/allanmacgregor) - info@allanmacgregor.com
