@@ -102,7 +102,7 @@ npm install npm@latest -g
  
 1. Clone the repo
 ```sh
-git clone https:://github.com/amacgregor/crimson_commerce.git
+git clone https://github.com/amacgregor/crimson_commerce.git
 ```
 2. Install Elixir dependencies packages
 ```sh
