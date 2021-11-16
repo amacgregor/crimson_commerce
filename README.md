@@ -114,7 +114,7 @@ mix ecto.setup
 ```
 4. Install the Node.js dependencies
 ```sh
-cd apps/crimson_commerce_web/assets && npm install
+cd assets && npm install
 ```
 5. Start the application
 ```sh
