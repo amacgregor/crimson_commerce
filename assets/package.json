@@ -30,7 +30,7 @@
     "sass": "^1.x",
     "sass-loader": "^10.x",
     "webpack": "^5.x",
-    "webpack-cli": "^4.x",
+    "webpack-cli": "^5.x",
     "tailwindcss": "^2.0.2"
   }
 }
